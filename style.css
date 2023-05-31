@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(./img/wallpaperflare.com_wallpaper.jpg);
+    color: #fff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    padding: 20px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#menu .options{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+#menu .options a{
+    text-decoration: none;
+}
+
+#menu .options span, p{
+    display: inline-block;
+}
+
+.container img{
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.container input[type="email"],
+.container input[type="password"],
+.container input[type="text"],
+.container input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: #45a049;
+}
+
+.container .register {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.container .register a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.container .register a:hover {
+    text-decoration: underline;
+}
+
+.container .welcome{
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.error-message{
+    color: red;
+    font-size: 10px;
+}
