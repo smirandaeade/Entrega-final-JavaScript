@@ -23,15 +23,18 @@
 
             <input type="text" name="apellido2" id="apellido2-input" placeholder="Segundo Apellido" required>
             <span class="error-message" id="apellido2-error"></span>
-            
+
             <input type="date" name="fechaNacimiento" id="fecha-nac" required>
-            <!--
+            <span class="error-message" id="fecha-error"></span>
+
             <input type="email" name="email" placeholder="Correo Electrónico" required>
-            <input type="text" name="run" placeholder="RUN (RUT)" required>
+
+            <input type="text" name="run" id="run" placeholder="RUN (RUT)" required>
+            <span class="error-message" id="run-error"></span>
             <input type="password" name="password" pattern="(?=.*\d)(?=.*[A-Z]).{6,}"
                 title="La contraseña debe contener al menos una letra mayúscula, un número y tener al menos 6 caracteres."
-                placeholder="Contraseña" required>
-                -->
+                placeholder="Contraseña" required id="pass">
+
             <button type="submit">Registrar</button>
         </form>
     </div>
