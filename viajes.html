@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -15,16 +15,17 @@
         // Verificar si hay un usuario en la sesión
         const userData = sessionStorage.getItem('userData');
         if (!userData) {
+            alert("Error 404 - debe iniciar sesion");
             // No hay un usuario en la sesión, redirigir a la página de inicio de sesión
-            window.location.href = 'login.html';
+            window.location.href = 'index.html';
         }
     </script>
     <div class="container" id="mis-viajes">
         <h1>Mis viajes</h1>
+        <p id="pasajeInfo"></p>
     </div>
-
-    <script src="./js/viajes.js"></script>
-
+<script type="module" src="./js/viajes.js"></script>
+<script type="module" src="./js/compra.js"></script>
 </body>
 
 </html>

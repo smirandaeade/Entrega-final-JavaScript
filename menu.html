@@ -17,8 +17,9 @@
         // Verificar si hay un usuario en la sesión
         const userData = sessionStorage.getItem('userData');
         if (!userData) {
+            alert("Error 404 - debe iniciar sesion");
             // No hay un usuario en la sesión, redirigir a la página de inicio de sesión
-            window.location.href = 'login.html';
+            window.location.href = 'index.html';
         }
     </script>
     <div class="container" id="menu">

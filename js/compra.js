@@ -109,7 +109,7 @@ function mostrarPosibilidadesDeVuelo() {
 
                 var asientosDisponibles = fechasVuelo[fecha];
                 var asientosDisponiblesSpan = document.createElement("span");
-                asientosDisponiblesSpan.textContent = "  // Asientos disponibles: " + asientosDisponibles;
+                asientosDisponiblesSpan.textContent = "  || Asientos disponibles: " + asientosDisponibles;
                 pasajeDiv.appendChild(asientosDisponiblesSpan);
 
                 var seleccionarBtn = document.createElement("button");
@@ -176,18 +176,17 @@ formularioCompra.addEventListener("submit", comprarPasaje);
 function comprarPasaje(event) {
     event.preventDefault(); // Evitar la recarga de la página
 
-    // Obtener el pasaje seleccionado
+    var origenSeleccionado = selectOrigen.value;
+    var plataformaOrigen = vuelos[origenSeleccionado].plataforma;
     var seleccionado = document.querySelector(".seleccionado");
     
     // Obtener la fecha de vuelo seleccionada
-    var fechaVueloElement = seleccionado.querySelector("span");
+    var fechaVueloElement = seleccionado;
     if (!fechaVueloElement) {
         alert("Error al obtener la fecha de vuelo seleccionada.");
-        console.log(fechaVueloElement)
         return;
     }
-    var fechaVuelo = fechaVueloElement.textContent.split(": ")[1];
-
+    var fechaVuelo = fechaVueloElement.textContent.split("||")[0].trim();
     // Obtener los datos del usuario almacenados en la sesión
     var userData = JSON.parse(sessionStorage.getItem('userData'));
     if (!userData) {
@@ -200,12 +199,18 @@ function comprarPasaje(event) {
         usuario: userData,
         origen: selectOrigen.value,
         destino: selectDestino.value,
-        fechaVuelo: fechaVuelo
+        fechaVuelo: fechaVuelo,
+        plataforma: plataformaOrigen
     };
 
     // Almacenar los datos del pasaje en la sesión
-    sessionStorage.setItem('pasaje', JSON.stringify(pasaje));
+    localStorage.setItem('pasaje', JSON.stringify(pasaje));
 
-    alert("Compra realizada");
+    alert("Compra realizada\n" + fechaVuelo + "\nPlataforma de lanzamiento: " + plataformaOrigen + "\nPasajero: " + pasaje.usuario);
     window.location.href = './viajes.html';
+}
+for (var i = 0; i < sessionStorage.length; i++) {
+    var key = sessionStorage.key(i);
+    var value = sessionStorage.getItem(key);
+    console.log('Key: ' + key + ', Value: ' + value);
 }
