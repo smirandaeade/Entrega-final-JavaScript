@@ -93,7 +93,7 @@
             password: document.getElementById('pass').value
         };
 
-        // Guardar el objeto en el LocalStorage
+        // Guarda el objeto en el LocalStorage
         localStorage.setItem(rut, JSON.stringify(formData));
 
         alert('registro exitoso');

@@ -5,24 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <title>Document</title>
 </head>
 
 <body>
+    <script>
+        // Verificar si hay un usuario en la sesión
+        const userData = sessionStorage.getItem('userData');
+        if (!userData) {
+            // No hay un usuario en la sesión, redirigir a la página de inicio de sesión
+            window.location.href = 'login.html';
+        }
+    </script>
     <div class="container" id="menu">
         <span class="welcome" id="welcome-message">
         </span>
         <div class="options">
-            <a href="#">
+            <a href="comprapasaje.html">
                 <span class="material-symbols-outlined">
                     public
                 </span>
                 <p>Comprar pasajes</p>
             </a>
-            <a href="#">
+            <a href="viajes.html">
                 <span class="material-symbols-outlined">
                     confirmation_number
                 </span>
@@ -31,9 +40,7 @@
         </div>
     </div>
 
-    <script src="registro.js"></script>
-    <script src="login.js"></script>
-    <script src="menu.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>

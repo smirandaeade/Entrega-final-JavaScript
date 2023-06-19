@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url(./img/wallpaperflare.com_wallpaper.jpg);
+    background-image: url(../img/wallpaperflare.com_wallpaper.jpg);
     color: #fff;
     margin: 0;
     display: flex;
@@ -43,13 +43,14 @@ body {
 
 .container h1 {
     text-align: center;
-    margin-bottom: 20px;
     color: #000;
+    margin: 0 auto 30px;
 }
 
 .container h2 {
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 0;
     color: #000;
 }
 
@@ -80,6 +81,18 @@ body {
     cursor: pointer;
 }
 
+.listadoPasajes button{
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+
+.option-container{
+    border-style: dashed;
+    margin: 1rem auto;
+    padding: 0 1rem 1rem 1rem;
+}
+
 .container button:hover {
     background-color: #45a049;
 }
@@ -100,7 +113,6 @@ body {
 
 .container .welcome{
     text-align: center;
-    padding-bottom: 4rem;
 }
 
 .error-message{
@@ -110,4 +122,16 @@ body {
 
 .welcome{
     font-size: 15px;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+#fecha-nac{
+    margin-top: 0;
+}
+#spanfecha{
+    display: block;
+    margin: 15px auto;
+    padding-bottom: 0;
 }

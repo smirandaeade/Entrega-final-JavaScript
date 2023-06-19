@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <title>Mis viajes</title>
+</head>
+
+<body>
+    <script>
+        // Verificar si hay un usuario en la sesión
+        const userData = sessionStorage.getItem('userData');
+        if (!userData) {
+            // No hay un usuario en la sesión, redirigir a la página de inicio de sesión
+            window.location.href = 'login.html';
+        }
+    </script>
+    <div class="container" id="mis-viajes">
+        <h1>Mis viajes</h1>
+    </div>
+
+    <script src="./js/viajes.js"></script>
+
+</body>
+
+</html>

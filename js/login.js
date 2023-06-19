@@ -18,7 +18,7 @@ loginForm.addEventListener('submit', (event) => {
 
     const email = document.getElementById('correo-index').value;
     const password = document.getElementById('pass-index').value;
-    
+
     let userFound = false;
 
     for (let i = 0; i < localStorage.length; i++) {
@@ -35,7 +35,7 @@ loginForm.addEventListener('submit', (event) => {
     if (userFound) {
         alert('Inicio de sesión exitoso');
         window.location.href = 'menu.html';
-        
+
     } else {
         alert('Correo o contraseña incorrectos');
     }

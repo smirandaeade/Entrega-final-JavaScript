@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Compra de pasajes</title>
+</head>
+
+<body>
+    <script>
+        // Verificar si hay un usuario en la sesión
+        const userData = sessionStorage.getItem('userData');
+        if (!userData) {
+            // No hay un usuario en la sesión, redirigir a la página de inicio de sesión
+            window.location.href = 'login.html';
+        }
+    </script>
+    <div class="container" id="compra-pasajes">
+        <h1>Compra de pasajes interplanetarios</h1>
+        <form id="formulario-compra">
+            <label for="planeta-origin">Planeta o luna de origen:</label>
+            <select id="planeta-origin" name="planetaorigen" required>
+                <option class="optiondisabled" disabled selected value="">Seleccione un planeta o luna</option>
+                <option value="mercurio">Mercurio</option>
+                <option value="venus">Venus</option>
+                <option value="tierra">Tierra</option>
+                <option value="marte">Marte</option>
+                <option value="luna">Luna</option>
+                <option value="titan">Titán</option>
+            </select><br><br>
+            <label for="planeta-dest">Planeta o luna de destino:</label>
+            <select id="planeta-dest" name="planetadestino" required>
+                <option class="optiondisabled" disabled selected value="">Seleccione un planeta o luna</option>
+                <option value="mercurio">Mercurio</option>
+                <option value="venus">Venus</option>
+                <option value="tierra">Tierra</option>
+                <option value="marte">Marte</option>
+                <option value="luna">Luna</option>
+                <option value="titan">Titán</option>
+            </select><br><br>
+            <span><h2>Fechas disponibles:</h2></span>
+            <div class="listadoPasajes"></div>
+            <button type="submit" id="btnComprar" style="display: none;">Comprar</button>
+
+        </form>
+    </div>
+    <script src="./js/compra.js"></script>
+</body>
+
+</html>
