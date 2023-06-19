@@ -104,7 +104,7 @@ function mostrarPosibilidadesDeVuelo() {
             listadoPasajesDiv.appendChild(plataformaTitulo);
 
             for (var fecha in fechasVuelo) {
-                var pasajeDiv = document.createElement("span");
+                var pasajeDiv = document.createElement("div");
                 pasajeDiv.textContent = "Fecha de vuelo: " + fecha;
 
                 var asientosDisponibles = fechasVuelo[fecha];
@@ -179,7 +179,7 @@ function comprarPasaje(event) {
     var origenSeleccionado = selectOrigen.value;
     var plataformaOrigen = vuelos[origenSeleccionado].plataforma;
     var seleccionado = document.querySelector(".seleccionado");
-    
+
     // Obtener la fecha de vuelo seleccionada
     var fechaVueloElement = seleccionado;
     if (!fechaVueloElement) {
@@ -203,14 +203,12 @@ function comprarPasaje(event) {
         plataforma: plataformaOrigen
     };
 
-    // Almacenar los datos del pasaje en la sesión
-    localStorage.setItem('pasaje', JSON.stringify(pasaje));
-
-    alert("Compra realizada\n" + fechaVuelo + "\nPlataforma de lanzamiento: " + plataformaOrigen + "\nPasajero: " + pasaje.usuario);
-    window.location.href = './viajes.html';
 }
+
 for (var i = 0; i < sessionStorage.length; i++) {
     var key = sessionStorage.key(i);
     var value = sessionStorage.getItem(key);
     console.log('Key: ' + key + ', Value: ' + value);
 }
+
+console.log(vuelos);

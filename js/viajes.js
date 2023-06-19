@@ -17,7 +17,7 @@ var pasaje = JSON.parse(localStorage.getItem('pasaje'));
 var pasajeInfo = document.getElementById('pasajeInfo');
 
 // Comprobar si el objeto "pasaje" existe en el sessionStorage
-if (pasaje) {
+if (pasaje.usuario && pasaje.usuario === JSON.parse(sessionStorage.getItem('userData'))) {
     // Crear una cadena con los datos del objeto "pasaje"
     var pasajeTexto = 'Origen: ' + pasaje.origen + '<br>' +
         'Destino: ' + pasaje.destino + '<br>' + pasaje.fechaVuelo + '<br>' +
@@ -26,6 +26,6 @@ if (pasaje) {
     // Asignar el texto al elemento HTML para mostrar los datos del objeto "pasaje"
     pasajeInfo.innerHTML = pasajeTexto;
 } else {
-    // El objeto "pasaje" no está presente en el sessionStorage
-    pasajeInfo.innerHTML = 'No se encontró el objeto "pasaje" en el sessionStorage.';
+    // El objeto "pasaje" no está presente en el localStorage o no coincide con el usuario actual
+    pasajeInfo.innerHTML = 'No existen pasajes comprados por este usuario.<br><br><a href="./comprapasaje.html"><button>Comprar pasajes</button>';
 }

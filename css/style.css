@@ -9,6 +9,13 @@ body {
     min-height: 100vh;
 }
 
+#volver,
+#exit{
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+}
+
 .container {
     max-width: 400px;
     padding: 20px;
@@ -18,7 +25,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#menu .options{
+#menu .options {
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -27,15 +34,16 @@ body {
     gap: 3rem;
 }
 
-#menu .options a{
+#menu .options a {
     text-decoration: none;
 }
 
-#menu .options span, p{
+#menu .options span,
+p {
     display: inline-block;
 }
 
-.container img{
+.container img {
     width: 150px;
     display: block;
     margin: 0 auto;
@@ -67,7 +75,7 @@ body {
 }
 
 #pass,
-#pass-index{
+#pass-index {
     margin-bottom: 15px;
 }
 
@@ -81,13 +89,46 @@ body {
     cursor: pointer;
 }
 
-.listadoPasajes button{
+#compra-pasajes {
+    max-width: 100%;
+}
+
+.listadoPasajes div {
+    padding: 1rem;
+    border-style: dashed;
+    margin: 1rem 0 1rem 0;
+}
+
+#pasajeInfo{
+    border-style: dashed;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.listadoPasajes div button {
+    margin-top: 1rem;
+}
+
+.listadoPasajes h3{
+    color: #0066cc;
+}
+
+.listadoPasajes{
+    text-align: center;
+}
+
+#btnComprar {
+    width: 10rem;
+    margin: 1rem auto 0;
+}
+
+.listadoPasajes button {
     width: 40%;
     display: block;
     margin: 0 auto;
 }
 
-.option-container{
+.option-container {
     border-style: dashed;
     margin: 1rem auto;
     padding: 0 1rem 1rem 1rem;
@@ -111,26 +152,27 @@ body {
     text-decoration: underline;
 }
 
-.container .welcome{
+.container .welcome {
     text-align: center;
 }
 
-.error-message{
+.error-message {
     color: red;
     font-size: 10px;
 }
 
-.welcome{
+.welcome {
     font-size: 15px;
     display: block;
     margin: 0 auto;
     padding-bottom: 1rem;
 }
 
-#fecha-nac{
+#fecha-nac {
     margin-top: 0;
 }
-#spanfecha{
+
+#spanfecha {
     display: block;
     margin: 15px auto;
     padding-bottom: 0;
