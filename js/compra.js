@@ -219,12 +219,3 @@ function comprarPasaje(event) {
     });
 
 }
-
-
-for (var i = 0; i < sessionStorage.length; i++) {
-    var key = sessionStorage.key(i);
-    var value = sessionStorage.getItem(key);
-    console.log('Key: ' + key + ', Value: ' + value);
-}
-
-console.log(vuelos);
