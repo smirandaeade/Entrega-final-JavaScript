@@ -1,4 +1,3 @@
-
 for (var i = 0; i < localStorage.length; i++) {
     var key = localStorage.key(i);
     var value = localStorage.getItem(key);
@@ -33,10 +32,22 @@ loginForm.addEventListener('submit', (event) => {
     }
 
     if (userFound) {
-        alert('Inicio de sesión exitoso');
-        window.location.href = 'menu.html';
-
+        Swal.fire({
+            icon: 'success',
+            title: 'Inicio de sesión exitoso',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        }).then(() => {
+            window.location.href = 'menu.html';
+        });
     } else {
-        alert('Correo o contraseña incorrectos');
+        Swal.fire({
+            icon: 'error',
+            title: 'Correo o contraseña incorrectos',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        });
     }
 })

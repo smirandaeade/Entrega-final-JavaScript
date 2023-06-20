@@ -121,7 +121,11 @@ function mostrarPosibilidadesDeVuelo() {
                     if (this.textContent === "Seleccionar") {
                         var seleccionados = listadoPasajesDiv.querySelectorAll(".seleccionado");
                         if (seleccionados.length > 0) {
-                            alert("De acuerdo a las políticas de la Federación Interplanetaria, solo puedes comprar un pasaje por usuario registrado en el sistema. Para poder comprar otro pasaje, debes completar el viaje que tienes agendado.");
+                            swal.fire({
+                                title: "Estimado usuario",
+                                text: "De acuerdo a las políticas de la Federación Interplanetaria, solo puedes comprar un pasaje por usuario registrado en el sistema. Para poder comprar otro pasaje, debes completar el viaje que tienes agendado.",
+                                icon: "info"
+                            })
                         } else {
                             this.textContent = "Quitar";
                             this.parentNode.style.backgroundColor = "lightyellow";
@@ -202,8 +206,20 @@ function comprarPasaje(event) {
         fechaVuelo: fechaVuelo,
         plataforma: plataformaOrigen
     };
+    // Almacenar los datos del pasaje en la sesión
+    sessionStorage.setItem('pasaje', JSON.stringify(pasaje));
+    localStorage.setItem('pasaje', JSON.stringify(pasaje));
+
+    swal.fire({
+        title: "Compra realizada",
+        html: `${fechaVuelo}<br><br>Plataforma de lanzamiento: ${plataformaOrigen}<br><br><br<br>Pasajero: ${pasaje.usuario}`,
+        icon: "success"
+    }).then(() => {
+        window.location.href = './viajes.html';
+    });
 
 }
+
 
 for (var i = 0; i < sessionStorage.length; i++) {
     var key = sessionStorage.key(i);
