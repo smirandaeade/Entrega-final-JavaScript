@@ -186,6 +186,7 @@ p {
     width: 10rem;
     margin: 0 auto;
     display: block;
+    margin-top: 1rem;
 }
 
 .container .eliminarVuelo:hover{
@@ -194,5 +195,15 @@ p {
 }
 
 #linkElim{
+    text-decoration: none;
+}
+
+#buyTicket{
+    width: 10rem;
+    margin: 0 auto;
+    display: block;
+}
+
+#linkBuy{
     text-decoration: none;
 }
